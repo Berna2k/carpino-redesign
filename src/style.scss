@@ -99,6 +99,11 @@ section[id] {
   line-height: 1;
   text-decoration: none;
 
+  &__imagen {
+  width: clamp(10rem, 17vw, 12rem);
+  height: auto;
+  }
+
   &__nombre {
     color: $rojo;
     font-family: Georgia, "Times New Roman", serif;
@@ -512,6 +517,24 @@ main {
     justify-content: center;
     gap: 1rem 1.5rem;
     margin-top: 2rem;
+  }
+  &__instagram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    transition: transform 200ms ease;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+    }
   }
 }
 
