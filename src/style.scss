@@ -49,6 +49,10 @@ main {
 
 .hero {
   padding-block: clamp(5rem, 14vw, 10rem);
+  margin-top: 1.5rem;
+  padding-inline: clamp(1.5rem, 6vw, 5rem);
+  background: linear-gradient(135deg, #f3dfcf 0%, $color-cream 72%);
+  border-radius: 2rem;
 
   h1 {
     max-width: 12ch;
@@ -64,7 +68,18 @@ main {
     color: white;
     background: $color-coral;
     border-radius: 999px;
+    transition: filter 280ms ease, transform 280ms ease;
   }
+}
+
+.hero > p:not(.sobretitulo) {
+  max-width: 50ch;
+  line-height: 1.7;
+}
+
+.hero > a:hover {
+  filter: brightness(0.92);
+  transform: translateY(-2px);
 }
 
 #sabores,
@@ -261,5 +276,16 @@ footer {
 
   .tarjetas-lista {
     grid-template-columns: 1fr;
+  }
+}
+
+// Desplazamiento suave entre secciones.
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
