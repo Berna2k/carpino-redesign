@@ -100,8 +100,8 @@ section[id] {
   text-decoration: none;
 
   &__imagen {
-  width: clamp(10rem, 17vw, 12rem);
-  height: auto;
+    width: clamp(10rem, 17vw, 12rem);
+    height: auto;
   }
 
   &__nombre {
@@ -173,13 +173,11 @@ main {
     position: absolute;
     z-index: -1;
     inset: 0;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 242, 248, 0.98) 0%,
-      rgba(255, 242, 248, 0.9) 38%,
-      rgba(255, 242, 248, 0.18) 76%,
-      transparent 100%
-    );
+    background: linear-gradient(90deg,
+        rgba(255, 242, 248, 0.98) 0%,
+        rgba(255, 242, 248, 0.9) 38%,
+        rgba(255, 242, 248, 0.18) 76%,
+        transparent 100%);
     content: "";
   }
 
@@ -468,7 +466,7 @@ main {
     letter-spacing: -0.045em;
   }
 
-  &__contenido > p:not(.sobretitulo) {
+  &__contenido>p:not(.sobretitulo) {
     max-width: 45ch;
     font-size: 1.1rem;
     line-height: 1.75;
@@ -509,7 +507,7 @@ main {
     letter-spacing: -0.045em;
   }
 
-  &__contenido > p:not(.sobretitulo) {
+  &__contenido>p:not(.sobretitulo) {
     max-width: 38ch;
     color: $gris;
     line-height: 1.7;
@@ -595,17 +593,43 @@ main {
     gap: 1rem 1.5rem;
     margin-top: 2rem;
   }
+}
+
+// Datos y enlaces del pie de página.
+.pie {
+  padding: clamp(2.5rem, 5vw, 4rem) max(1.25rem, calc((100% - 76rem) / 2)) 1.5rem;
+  color: $tinta;
+  background: $rosa-claro;
+  border-top: 1px solid $borde;
+
+  &__contenido {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__datos {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    font-style: normal;
+    line-height: 1.5;
+
+    a {
+      width: fit-content;
+      color: $rojo-oscuro;
+      text-underline-offset: 0.25em;
+    }
+  }
+
   &__instagram {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 3.5rem;
-    height: 3.5rem;
     border-radius: 50%;
     transition: transform 200ms ease;
 
     img {
-      width: 100%;
+      width: 3.5rem;
       height: auto;
     }
 
@@ -613,27 +637,13 @@ main {
       transform: translateY(-2px);
     }
   }
-}
-
-.pie {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 2.5rem max(1.25rem, calc((100% - 76rem) / 2));
-  color: white;
-  background: #321820;
-
-  .marca__nombre {
-    color: white;
-  }
-
-  .marca__descriptor {
-    color: $rosa;
-  }
 
   small {
-    color: $rosa;
+    display: block;
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    color: $gris;
+    border-top: 1px solid rgba($rojo-oscuro, 0.2);
   }
 }
 
@@ -694,10 +704,22 @@ main {
       grid-template-columns: 1fr;
     }
   }
+
+  .pie {
+    &__contenido {
+      align-items: start;
+      gap: 1rem;
+    }
+
+    &__instagram img {
+      width: 2.75rem;
+    }
+  }
 }
 
 // En celular el degradado libera la zona superior para el texto.
 @media (max-width: 600px) {
+
   .encabezado__interior,
   main {
     width: min(100% - 1.5rem, 76rem);
@@ -714,12 +736,10 @@ main {
     border-radius: 1.25rem;
 
     &::before {
-      background: linear-gradient(
-        180deg,
-        rgba(255, 242, 248, 0.98) 0%,
-        rgba(255, 242, 248, 0.94) 48%,
-        rgba(255, 242, 248, 0.08) 100%
-      );
+      background: linear-gradient(180deg,
+          rgba(255, 242, 248, 0.98) 0%,
+          rgba(255, 242, 248, 0.94) 48%,
+          rgba(255, 242, 248, 0.08) 100%);
     }
 
     &__imagen {
@@ -769,11 +789,6 @@ main {
     &__acciones {
       flex-direction: column;
     }
-  }
-
-  .pie {
-    align-items: flex-start;
-    flex-direction: column;
   }
 }
 
