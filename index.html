@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Helados artesanales desde 1986 en Morón. Conocé Heladería Carpino y descubrí más de 50 sabores."
+      content="Helados artesanales desde 1986 en Morón. Explorá la carta de sabores de Heladería Carpino."
     />
     <meta name="theme-color" content="#b50218" />
     <link
@@ -63,7 +63,7 @@
           </p>
 
           <div class="hero__acciones">
-            <a class="hero__boton" href="#sabores">Más de 50 sabores</a>
+            <a class="hero__boton" href="#sabores">Explorar sabores</a>
             <a class="hero__enlace" href="#contacto">Encontranos</a>
           </div>
         </div>
@@ -74,17 +74,39 @@
         id="sabores"
         aria-labelledby="titulo-sabores"
       >
-        <div class="sabores__contenido">
-          <p class="sobretitulo">Para todos los gustos</p>
-          <h2 id="titulo-sabores">Más de 50 sabores para descubrir</h2>
-          <p>
-            Hay muchas formas de disfrutar Carpino. Vení a conocer la variedad
-            completa y elegí tu favorito.
-          </p>
+        <div class="sabores__encabezado">
+          <div>
+            <p class="sobretitulo">La carta Carpino</p>
+            <h2 id="titulo-sabores">Encontrá tu sabor favorito</h2>
+            <p id="resumen-sabores" class="sabores__resumen" aria-live="polite">
+              Cargando sabores...
+            </p>
+          </div>
           <a class="boton-secundario" href="#contacto">Visitá el local</a>
         </div>
 
-        <p class="sabores__cifra" aria-hidden="true">50<span>+</span></p>
+        <div class="sabores__herramientas">
+          <div class="sabores__busqueda">
+            <label for="buscar-sabor">Buscar un sabor</label>
+            <input
+              id="buscar-sabor"
+              type="search"
+              placeholder="Probá con chocolate, limón..."
+              autocomplete="off"
+            />
+          </div>
+          <div
+            id="filtros-sabores"
+            class="sabores__filtros"
+            role="group"
+            aria-label="Filtrar sabores por categoría"
+          ></div>
+        </div>
+
+        <div id="lista-sabores" class="sabores__resultados"></div>
+        <noscript>
+          <p>Para consultar la carta interactiva, activá JavaScript en el navegador.</p>
+        </noscript>
       </section>
 
       <section
