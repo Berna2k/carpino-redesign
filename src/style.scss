@@ -1,291 +1,562 @@
-// Colores reutilizables de la marca.
-$color-cream: #fff8ed;
-$color-brown: #4b3028;
-$color-coral: #d86b4d;
+// Paleta inspirada en la identidad actual de Carpino.
+$rojo: #b50218;
+$rojo-oscuro: #8c0013;
+$rosa: #ffcdd5;
+$rosa-claro: #fff2f8;
+$crema: #fffaf6;
+$tinta: #32242a;
+$gris: #66565b;
+$borde: #eadde0;
 
-// Reglas base compartidas por toda la página.
+// Base compartida por toda la página.
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  color: $color-brown;
-  background: $color-cream;
-  font-family: Arial, sans-serif;
+  color: $tinta;
+  background: $crema;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 a {
   color: inherit;
-  text-decoration: none;
 }
 
-// Encabezado y navegación principal.
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.25rem 6%;
-  background: $color-cream;
-
-  > a {
-    font-size: 1.4rem;
-    font-weight: 700;
-  }
-
-  nav {
-    display: flex;
-    gap: 1.5rem;
-  }
+button {
+  font: inherit;
 }
 
-// Presentación principal.
-main {
-  width: min(100% - 3rem, 72rem);
-  margin-inline: auto;
+:focus-visible {
+  outline: 3px solid $rojo;
+  outline-offset: 4px;
 }
 
-.hero {
-  padding-block: clamp(5rem, 14vw, 10rem);
-  margin-top: 1.5rem;
-  padding-inline: clamp(1.5rem, 6vw, 5rem);
-  background: linear-gradient(135deg, #f3dfcf 0%, $color-cream 72%);
-  border-radius: 2rem;
-
-  h1 {
-    max-width: 12ch;
-    margin-block: 0.5rem 1rem;
-    font-size: clamp(2.5rem, 7vw, 5.5rem);
-    line-height: 1;
-  }
-
-  > a {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.85rem 1.2rem;
-    color: white;
-    background: $color-coral;
-    border-radius: 999px;
-    transition: filter 280ms ease, transform 280ms ease;
-  }
+section[id] {
+  scroll-margin-top: 7rem;
 }
 
-.hero > p:not(.sobretitulo) {
-  max-width: 50ch;
-  line-height: 1.7;
-}
-
-.hero > a:hover {
-  filter: brightness(0.92);
-  transform: translateY(-2px);
-}
-
-#sabores,
-#nosotros {
-  padding-block: 3rem;
-}
-
-footer {
-  padding: 1.5rem 6%;
-  background: #f2e5d5;
-}
-
-// Grilla de tarjetas para los sabores.
-// Estilo compartido para los textos sobre cada título.
 .sobretitulo {
-  color: $color-coral;
+  margin: 0 0 1rem;
+  color: $rojo;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-// Bloque de presentación de la heladería.
-.nosotros {
-  margin-block: 3rem;
-  padding: clamp(1.5rem, 5vw, 4rem);
-  background: #f2e5d5;
-  border-radius: 1.5rem;
+// Navegación principal.
+.encabezado {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  background: rgba(255, 250, 246, 0.96);
+  border-bottom: 1px solid $borde;
+  backdrop-filter: blur(12px);
 
-  h2 {
-    margin-block: 0.5rem;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+  &__interior {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.25rem, 3vw, 3rem);
+    width: min(100% - 2.5rem, 76rem);
+    min-height: 5.5rem;
+    margin-inline: auto;
   }
 
-  p:last-child {
-    max-width: 60ch;
-    line-height: 1.7;
-  }
-}
-
-.sabores h2 {
-  margin-block: 0.5rem;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-}
-
-.tarjetas-lista {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin-block: 2rem 0;
-  padding: 0;
-  list-style: none;
-}
-
-.tarjeta {
-  padding: 1.5rem;
-  background: white;
-  border: 1px solid #eadaca;
-  border-radius: 1rem;
-
-  h3 {
-    margin-top: 0;
-  }
-}
-
-// Presentación de los productos.
-.productos {
-  padding-block: 3rem;
-
-  h2 {
-    margin-block: 0.5rem;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-  }
-}
-
-// Formulario de contacto y estados de teclado.
-.contacto {
-  margin-block: 3rem;
-  padding: clamp(1.5rem, 5vw, 4rem);
-  background: white;
-  border: 1px solid #eadaca;
-  border-radius: 1.5rem;
-
-  h2 {
-    margin-block: 0.5rem;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-  }
-
-  form {
-    display: grid;
-    gap: 1rem;
-    max-width: 40rem;
-    margin-top: 2rem;
-  }
-
-  form > div {
-    display: grid;
-    gap: 0.5rem;
-  }
-
-  input,
-  textarea {
-    width: 100%;
-    padding: 0.8rem;
-    color: $color-brown;
-    font: inherit;
-    border: 1px solid #cbb9a8;
-    border-radius: 0.5rem;
-  }
-
-  textarea {
-    resize: vertical;
-  }
-
-  button {
-    justify-self: start;
-    padding: 0.85rem 1.2rem;
+  &__accion {
+    flex-shrink: 0;
+    padding: 0.75rem 1.1rem;
     color: white;
-    font: inherit;
-    background: $color-coral;
-    border: 0;
+    background: $rojo;
     border-radius: 999px;
-    cursor: pointer;
-  }
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 200ms ease;
 
-  :focus-visible {
-    outline: 3px solid $color-coral;
-    outline-offset: 3px;
+    &:hover {
+      background: $rojo-oscuro;
+    }
   }
 }
 
-// Controles del filtro de sabores.
-.filtros-sabores {
+.marca {
+  display: inline-flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  line-height: 1;
+  text-decoration: none;
+
+  &__nombre {
+    color: $rojo;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+  }
+
+  &__descriptor {
+    margin-top: 0.35rem;
+    color: $gris;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+}
+
+.navegacion {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-block: 1.5rem;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  margin-left: auto;
 
-  button {
-    padding: 0.65rem 1rem;
-    color: $color-brown;
-    font: inherit;
-    background: transparent;
-    border: 1px solid #cbb9a8;
-    border-radius: 999px;
-    cursor: pointer;
-  }
+  a {
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
 
-  button[aria-pressed="true"] {
-    color: white;
-    background: $color-brown;
-    border-color: $color-brown;
-  }
-
-  button:focus-visible {
-    outline: 3px solid $color-coral;
-    outline-offset: 3px;
+    &:hover {
+      color: $rojo;
+    }
   }
 }
 
-// Botón del menú, visible solo en pantallas pequeñas.
 .boton-menu {
   display: none;
-  padding: 0.65rem 1rem;
-  color: $color-brown;
-  font: inherit;
+  padding: 0.65rem 0.9rem;
+  color: $rojo;
   background: transparent;
-  border: 1px solid #cbb9a8;
+  border: 1px solid $rojo;
   border-radius: 999px;
+  font-weight: 700;
   cursor: pointer;
 }
 
-// Ajustes para pantallas pequeñas.
-@media (max-width: 600px) {
-  header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 1rem;
+main {
+  width: min(100% - 2.5rem, 76rem);
+  margin-inline: auto;
+}
 
-    nav {
-      display: none;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
+// La foto panorámica ocupa el hero; el degradado mantiene legible el texto.
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: clamp(34rem, 55vw, 44rem);
+  margin-top: 1.25rem;
+  padding: clamp(2rem, 8vw, 7rem);
+  overflow: hidden;
+  background: $rosa-claro;
+  border-radius: 1.75rem;
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 242, 248, 0.98) 0%,
+      rgba(255, 242, 248, 0.9) 38%,
+      rgba(255, 242, 248, 0.18) 76%,
+      transparent 100%
+    );
+    content: "";
+  }
+
+  &__imagen {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 65% center;
+  }
+
+  &__contenido {
+    max-width: 39rem;
+  }
+
+  h1 {
+    max-width: 12ch;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3.2rem, 6.5vw, 6rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  &__texto {
+    max-width: 32ch;
+    margin-block: 1.5rem 0;
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    line-height: 1.6;
+  }
+
+  &__acciones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  &__boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.2rem;
+    padding: 0.85rem 1.35rem;
+    color: white;
+    background: $rojo;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 200ms ease, transform 200ms ease;
+
+    &:hover {
+      background: $rojo-oscuro;
+      transform: translateY(-2px);
+    }
+  }
+
+  &__enlace {
+    color: $rojo-oscuro;
+    font-weight: 700;
+    text-underline-offset: 0.25em;
+  }
+}
+
+// Una cifra real comunica la amplitud de sabores sin simular un catálogo.
+.sabores {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.65fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  padding: clamp(5rem, 10vw, 9rem) clamp(0.5rem, 3vw, 3rem);
+
+  &__contenido {
+    max-width: 40rem;
+  }
+
+  h2 {
+    margin: 0 0 1.5rem;
+    color: $rojo-oscuro;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.8rem, 5.5vw, 5.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.05em;
+  }
+
+  &__contenido > p:not(.sobretitulo) {
+    max-width: 48ch;
+    color: $gris;
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  &__cifra {
+    margin: 0;
+    padding: 2rem 1rem;
+    color: $rojo;
+    background: $rosa-claro;
+    border-radius: 2rem;
+    font-size: clamp(7rem, 15vw, 12rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.12em;
+    text-align: center;
+
+    span {
+      font-size: 0.5em;
+      vertical-align: top;
+    }
+  }
+}
+
+.boton-secundario {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  color: $rojo;
+  border: 2px solid $rojo;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 200ms ease, background 200ms ease;
+
+  &:hover {
+    color: white;
+    background: $rojo;
+  }
+}
+
+// La imagen del local acompaña la historia de la marca.
+.nosotros {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  padding: clamp(1.5rem, 5vw, 4rem);
+  color: white;
+  background: $rojo;
+  border-radius: 2rem;
+
+  &__imagen {
+    height: clamp(22rem, 40vw, 31rem);
+    overflow: hidden;
+    border-radius: 1.25rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+    }
+  }
+
+  .sobretitulo {
+    color: $rosa;
+  }
+
+  h2 {
+    max-width: 15ch;
+    margin: 0 0 1.5rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.7rem, 5vw, 4.8rem);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  &__contenido > p:not(.sobretitulo) {
+    max-width: 45ch;
+    font-size: 1.1rem;
+    line-height: 1.75;
+  }
+
+  .enlace-texto {
+    color: white;
+  }
+}
+
+.enlace-texto {
+  display: inline-block;
+  margin-top: 1rem;
+  color: $rojo-oscuro;
+  font-weight: 700;
+  text-underline-offset: 0.25em;
+}
+
+// Ubicación y acciones de contacto.
+.contacto {
+  margin-block: clamp(4rem, 9vw, 8rem);
+  padding: clamp(3rem, 8vw, 6rem) 1.5rem;
+  background: $rosa-claro;
+  border: 1px solid $borde;
+  border-radius: 2rem;
+  text-align: center;
+
+  h2 {
+    margin: 0 0 1.25rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.7rem, 5vw, 4.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  address {
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    font-style: normal;
+    line-height: 1.6;
+  }
+
+  &__acciones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem 1.5rem;
+    margin-top: 2rem;
+  }
+}
+
+.pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.5rem max(1.25rem, calc((100% - 76rem) / 2));
+  color: white;
+  background: #321820;
+
+  .marca__nombre {
+    color: white;
+  }
+
+  .marca__descriptor {
+    color: $rosa;
+  }
+
+  small {
+    color: $rosa;
+  }
+}
+
+// Menú desplegable y secciones apiladas en pantallas medianas.
+@media (max-width: 800px) {
+  .encabezado {
+    &__interior {
+      flex-wrap: wrap;
+      min-height: auto;
+      padding-block: 0.9rem;
     }
 
-    &.menu-abierto nav {
+    &__accion {
+      display: none;
+    }
+
+    &.menu-abierto .navegacion {
       display: flex;
     }
   }
 
   .boton-menu {
     display: inline-flex;
+    margin-left: auto;
   }
 
-  .tarjetas-lista {
+  .navegacion {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin-left: 0;
+    padding-top: 0.75rem;
+    border-top: 1px solid $borde;
+
+    a {
+      padding: 0.75rem 0;
+    }
+  }
+
+  .sabores,
+  .nosotros {
     grid-template-columns: 1fr;
+  }
+
+  .sabores__cifra {
+    justify-self: start;
+    min-width: 15rem;
+    font-size: 8rem;
   }
 }
 
-// Desplazamiento suave entre secciones.
-html {
-  scroll-behavior: smooth;
+// En celular la imagen del hero queda debajo del texto.
+// En celular el degradado libera la zona superior para el texto.
+@media (max-width: 600px) {
+  .encabezado__interior,
+  main {
+    width: min(100% - 1.5rem, 76rem);
+  }
+
+  .marca__nombre {
+    font-size: 1.75rem;
+  }
+
+  .hero {
+    align-items: flex-start;
+    min-height: 42rem;
+    padding: 2.5rem 1.5rem;
+    border-radius: 1.25rem;
+
+    &::before {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 242, 248, 0.98) 0%,
+        rgba(255, 242, 248, 0.94) 48%,
+        rgba(255, 242, 248, 0.08) 100%
+      );
+    }
+
+    &__imagen {
+      object-position: 78% center;
+    }
+
+    h1 {
+      font-size: clamp(2.75rem, 11vw, 4rem);
+    }
+
+    &__acciones {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+  }
+
+  .sabores {
+    padding: 5rem 0.25rem;
+
+    &__cifra {
+      justify-self: stretch;
+      min-width: 0;
+      font-size: clamp(6rem, 25vw, 9rem);
+    }
+  }
+
+  .nosotros {
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+
+    &__imagen {
+      height: 22rem;
+    }
+
+    &__contenido {
+      padding: 0.75rem 0.25rem 1rem;
+    }
+  }
+
+  .contacto {
+    margin-block: 4rem;
+    border-radius: 1.25rem;
+
+    &__acciones {
+      flex-direction: column;
+    }
+  }
+
+  .pie {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
   }
 }

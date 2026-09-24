@@ -2,148 +2,153 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Conocé los sabores y productos de Heladería Carpino."/>
-    <title>Heladería Carpino</title>
+    <meta
+      name="description"
+      content="Helados artesanales desde 1986 en Morón. Conocé Heladería Carpino y descubrí más de 50 sabores."
+    />
+    <meta name="theme-color" content="#b50218" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/favicon-carpino-32x32.png"
+    />
+    <title>Heladería Carpino | Helados artesanales en Morón</title>
   </head>
+
   <body>
-    <header>
-  <a href="#inicio">Carpino</a>
+    <header class="encabezado">
+      <div class="encabezado__interior">
+        <a class="marca" href="#inicio" aria-label="Carpino, inicio">
+          <span class="marca__nombre">Carpino</span>
+          <span class="marca__descriptor">Helados artesanales</span>
+        </a>
 
-  <button
-  class="boton-menu"
-  type="button"
-  aria-expanded="false"
-  aria-controls="navegacion-principal"
->
-  Menú
-</button>
+        <button
+          class="boton-menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="navegacion-principal"
+        >
+          Menú
+        </button>
 
-  <nav id="navegacion-principal" aria-label="Navegación principal">
-    <a href="#sabores">Sabores</a>
-    <a href="#productos">Productos</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-</header>
+        <nav
+          class="navegacion"
+          id="navegacion-principal"
+          aria-label="Navegación principal"
+        >
+          <a href="#sabores">Sabores</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#contacto">Ubicación</a>
+        </nav>
 
-<main id="inicio">
-  <section class="hero">
-    <p class="sobretitulo">Heladería artesanal</p>
-    <h1>Un momento dulce, hecho para disfrutar</h1>
-    <p>Descubrí los sabores de Heladería Carpino.</p>
-    <a href="#sabores">Ver sabores</a>
-  </section>
+        <a class="encabezado__accion" href="#contacto">Cómo llegar</a>
+      </div>
+    </header>
 
-  <section class="sabores" id="sabores" aria-labelledby="titulo-sabores">
-  <p class="sobretitulo">Hechos para disfrutar</p>
-  <h2 id="titulo-sabores">Nuestros sabores</h2>
-  <p>Algunos clásicos para elegir tu próximo gusto favorito.</p>
-  <div class="filtros-sabores" role="group" aria-label="Filtrar sabores">
-  <button type="button" data-filtro="todos" aria-pressed="true">
-    Todos
-  </button>
-  <button type="button" data-filtro="cremoso" aria-pressed="false">
-    Cremosos
-  </button>
-  <button type="button" data-filtro="frutal" aria-pressed="false">
-    Frutales
-  </button>
-</div>
+    <main id="inicio">
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          class="hero__imagen"
+          src="/images/banner-home.jpg"
+          alt="Mano sosteniendo un cucurucho de helado artesanal sobre un fondo rosa"
+        />
 
-  <ul class="tarjetas-lista">
-    <li class="tarjeta" data-categoria="cremoso">
-      <h3>Dulce de leche</h3>
-      <p>Un clásico cremoso para cualquier momento.</p>
-    </li>
-    <li class="tarjeta" data-categoria="cremoso">
-      <h3>Chocolate</h3>
-      <p>Intenso, suave y lleno de sabor.</p>
-    </li>
-    <li class="tarjeta" data-categoria="frutal">
-      <h3>Frutilla</h3>
-      <p>Fresco y frutal, ideal para compartir.</p>
-    </li>
-  </ul>
-</section>
+        <div class="hero__contenido">
+          <p class="sobretitulo">Heladería artesanal · Morón</p>
+          <h1 id="hero-title">Helados artesanales desde 1986</h1>
+          <p class="hero__texto">
+            Conocé Carpino y encontrá tu próximo sabor favorito.
+          </p>
 
-<section class="productos" id="productos" aria-labelledby="titulo-productos">
-  <p class="sobretitulo">Más para disfrutar</p>
-  <h2 id="titulo-productos">Algo rico para cada ocasión</h2>
+          <div class="hero__acciones">
+            <a class="hero__boton" href="#sabores">Más de 50 sabores</a>
+            <a class="hero__enlace" href="#contacto">Encontranos</a>
+          </div>
+        </div>
+      </section>
 
-  <ul class="tarjetas-lista">
-    <li class="tarjeta">
-      <h3>Helados</h3>
-      <p>Distintos sabores para disfrutar en cualquier momento.</p>
-    </li>
-    <li class="tarjeta">
-      <h3>Postres</h3>
-      <p>Una opción dulce para compartir o darte un gusto.</p>
-    </li>
-    <li class="tarjeta">
-      <h3>Tortas</h3>
-      <p>Ideas para acompañar una celebración especial.</p>
-    </li>
-  </ul>
-</section>
-
-  <section class="nosotros" id="nosotros" aria-labelledby="titulo-nosotros">
-  <p class="sobretitulo">Conocenos</p>
-  <h2 id="titulo-nosotros">Un poco sobre Heladería Carpino</h2>
-  <p>
-    En esta sección contaremos la historia de la heladería,
-    su propuesta y qué la hace especial.
-  </p>
-</section>
-
-<section class="contacto" id="contacto" aria-labelledby="titulo-contacto">
-  <p class="sobretitulo">Hablemos</p>
-  <h2 id="titulo-contacto">¿Tenés alguna consulta?</h2>
-  <p>Dejanos un mensaje y pronto nos pondremos en contacto.</p>
-
-  <form id="formulario-contacto">
-    <div>
-      <label for="nombre">Nombre</label>
-      <input
-        id="nombre"
-        name="nombre"
-        type="text"
-        autocomplete="name"
-        required
+      <section
+        class="sabores"
+        id="sabores"
+        aria-labelledby="titulo-sabores"
       >
-    </div>
+        <div class="sabores__contenido">
+          <p class="sobretitulo">Para todos los gustos</p>
+          <h2 id="titulo-sabores">Más de 50 sabores para descubrir</h2>
+          <p>
+            Hay muchas formas de disfrutar Carpino. Vení a conocer la variedad
+            completa y elegí tu favorito.
+          </p>
+          <a class="boton-secundario" href="#contacto">Visitá el local</a>
+        </div>
 
-    <div>
-      <label for="email">Correo electrónico</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        autocomplete="email"
-        required
+        <p class="sabores__cifra" aria-hidden="true">50<span>+</span></p>
+      </section>
+
+      <section
+        class="nosotros"
+        id="nosotros"
+        aria-labelledby="titulo-nosotros"
       >
-    </div>
+        <div class="nosotros__imagen">
+          <img
+            src="/images/cucurucho3.jpeg"
+            alt="Cucurucho de helado frente al mostrador de Carpino"
+            loading="lazy"
+          />
+        </div>
 
-    <div>
-      <label for="mensaje">Mensaje</label>
-      <textarea
-        id="mensaje"
-        name="mensaje"
-        rows="5"
-        required
-      ></textarea>
-    </div>
+        <div class="nosotros__contenido">
+          <p class="sobretitulo">Nuestra historia</p>
+          <h2 id="titulo-nosotros">Una tradición artesanal en Morón</h2>
+          <p>
+            Desde 1986, Heladería Carpino prepara helados artesanales
+            en Morón.
+          </p>
+          <a class="enlace-texto" href="#contacto">Vení a conocernos</a>
+        </div>
+      </section>
 
-    <button type="submit">Enviar mensaje</button>
-  </form>
-  <p id="estado-formulario" role="status" aria-live="polite"></p>
-</section>
-</main>
+      <section
+        class="contacto"
+        id="contacto"
+        aria-labelledby="titulo-contacto"
+      >
+        <p class="sobretitulo">Visitanos</p>
+        <h2 id="titulo-contacto">Te esperamos en Carpino</h2>
+        <address>Av. Eva Perón 2833, Morón, Buenos Aires</address>
 
-<footer>
-  <p>Heladería Carpino</p>
-</footer>
+        <div class="contacto__acciones">
+          <a
+            class="hero__boton"
+            href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Eva+Per%C3%B3n+2833%2C+Mor%C3%B3n"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Cómo llegar
+          </a>
+          <a
+            class="enlace-texto"
+            href="https://www.instagram.com/heladoscarpino/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram de Carpino
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <a class="marca marca--footer" href="#inicio">
+        <span class="marca__nombre">Carpino</span>
+        <span class="marca__descriptor">Helados artesanales · Morón</span>
+      </a>
+      <small>© Heladería Carpino</small>
+    </footer>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
