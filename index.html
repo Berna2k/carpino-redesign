@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Conocé los sabores y productos de Heladería Carpino."/>
+    <title>Heladería Carpino</title>
+  </head>
+  <body>
+    <header>
+  <a href="#inicio">Carpino</a>
+
+  <button
+  class="boton-menu"
+  type="button"
+  aria-expanded="false"
+  aria-controls="navegacion-principal"
+>
+  Menú
+</button>
+
+  <nav id="navegacion-principal" aria-label="Navegación principal">
+    <a href="#sabores">Sabores</a>
+    <a href="#productos">Productos</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <p>Heladería artesanal</p>
+    <h1>Un momento dulce, hecho para disfrutar</h1>
+    <p>Descubrí los sabores de Heladería Carpino.</p>
+    <a href="#sabores">Ver sabores</a>
+  </section>
+
+  <section class="sabores" id="sabores" aria-labelledby="titulo-sabores">
+  <p class="sobretitulo">Hechos para disfrutar</p>
+  <h2 id="titulo-sabores">Nuestros sabores</h2>
+  <p>Algunos clásicos para elegir tu próximo gusto favorito.</p>
+  <div class="filtros-sabores" role="group" aria-label="Filtrar sabores">
+  <button type="button" data-filtro="todos" aria-pressed="true">
+    Todos
+  </button>
+  <button type="button" data-filtro="cremoso" aria-pressed="false">
+    Cremosos
+  </button>
+  <button type="button" data-filtro="frutal" aria-pressed="false">
+    Frutales
+  </button>
+</div>
+
+  <ul class="tarjetas-lista">
+    <li class="tarjeta" data-categoria="cremoso">
+      <h3>Dulce de leche</h3>
+      <p>Un clásico cremoso para cualquier momento.</p>
+    </li>
+    <li class="tarjeta" data-categoria="cremoso">
+      <h3>Chocolate</h3>
+      <p>Intenso, suave y lleno de sabor.</p>
+    </li>
+    <li class="tarjeta" data-categoria="frutal">
+      <h3>Frutilla</h3>
+      <p>Fresco y frutal, ideal para compartir.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="productos" id="productos" aria-labelledby="titulo-productos">
+  <p class="sobretitulo">Más para disfrutar</p>
+  <h2 id="titulo-productos">Algo rico para cada ocasión</h2>
+
+  <ul class="tarjetas-lista">
+    <li class="tarjeta">
+      <h3>Helados</h3>
+      <p>Distintos sabores para disfrutar en cualquier momento.</p>
+    </li>
+    <li class="tarjeta">
+      <h3>Postres</h3>
+      <p>Una opción dulce para compartir o darte un gusto.</p>
+    </li>
+    <li class="tarjeta">
+      <h3>Tortas</h3>
+      <p>Ideas para acompañar una celebración especial.</p>
+    </li>
+  </ul>
+</section>
+
+  <section class="nosotros" id="nosotros" aria-labelledby="titulo-nosotros">
+  <p class="sobretitulo">Conocenos</p>
+  <h2 id="titulo-nosotros">Un poco sobre Heladería Carpino</h2>
+  <p>
+    En esta sección contaremos la historia de la heladería,
+    su propuesta y qué la hace especial.
+  </p>
+</section>
+
+<section class="contacto" id="contacto" aria-labelledby="titulo-contacto">
+  <p class="sobretitulo">Hablemos</p>
+  <h2 id="titulo-contacto">¿Tenés alguna consulta?</h2>
+  <p>Dejanos un mensaje y pronto nos pondremos en contacto.</p>
+
+  <form id="formulario-contacto">
+    <div>
+      <label for="nombre">Nombre</label>
+      <input
+        id="nombre"
+        name="nombre"
+        type="text"
+        autocomplete="name"
+        required
+      >
+    </div>
+
+    <div>
+      <label for="email">Correo electrónico</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        required
+      >
+    </div>
+
+    <div>
+      <label for="mensaje">Mensaje</label>
+      <textarea
+        id="mensaje"
+        name="mensaje"
+        rows="5"
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit">Enviar mensaje</button>
+  </form>
+  <p id="estado-formulario" role="status" aria-live="polite"></p>
+</section>
+</main>
+
+<footer>
+  <p>Heladería Carpino</p>
+</footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

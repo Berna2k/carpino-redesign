@@ -1,0 +1,265 @@
+// Colores reutilizables de la marca.
+$color-cream: #fff8ed;
+$color-brown: #4b3028;
+$color-coral: #d86b4d;
+
+// Reglas base compartidas por toda la página.
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: $color-brown;
+  background: $color-cream;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// Encabezado y navegación principal.
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 6%;
+  background: $color-cream;
+
+  > a {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+}
+
+// Presentación principal.
+main {
+  width: min(100% - 3rem, 72rem);
+  margin-inline: auto;
+}
+
+.hero {
+  padding-block: clamp(5rem, 14vw, 10rem);
+
+  h1 {
+    max-width: 12ch;
+    margin-block: 0.5rem 1rem;
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    line-height: 1;
+  }
+
+  > a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.85rem 1.2rem;
+    color: white;
+    background: $color-coral;
+    border-radius: 999px;
+  }
+}
+
+#sabores,
+#nosotros {
+  padding-block: 3rem;
+}
+
+footer {
+  padding: 1.5rem 6%;
+  background: #f2e5d5;
+}
+
+// Grilla de tarjetas para los sabores.
+// Estilo compartido para los textos sobre cada título.
+.sobretitulo {
+  color: $color-coral;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+// Bloque de presentación de la heladería.
+.nosotros {
+  margin-block: 3rem;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  background: #f2e5d5;
+  border-radius: 1.5rem;
+
+  h2 {
+    margin-block: 0.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  p:last-child {
+    max-width: 60ch;
+    line-height: 1.7;
+  }
+}
+
+.sabores h2 {
+  margin-block: 0.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.tarjetas-lista {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-block: 2rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tarjeta {
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid #eadaca;
+  border-radius: 1rem;
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
+// Presentación de los productos.
+.productos {
+  padding-block: 3rem;
+
+  h2 {
+    margin-block: 0.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+}
+
+// Formulario de contacto y estados de teclado.
+.contacto {
+  margin-block: 3rem;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  background: white;
+  border: 1px solid #eadaca;
+  border-radius: 1.5rem;
+
+  h2 {
+    margin-block: 0.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  form {
+    display: grid;
+    gap: 1rem;
+    max-width: 40rem;
+    margin-top: 2rem;
+  }
+
+  form > div {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.8rem;
+    color: $color-brown;
+    font: inherit;
+    border: 1px solid #cbb9a8;
+    border-radius: 0.5rem;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button {
+    justify-self: start;
+    padding: 0.85rem 1.2rem;
+    color: white;
+    font: inherit;
+    background: $color-coral;
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 3px solid $color-coral;
+    outline-offset: 3px;
+  }
+}
+
+// Controles del filtro de sabores.
+.filtros-sabores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block: 1.5rem;
+
+  button {
+    padding: 0.65rem 1rem;
+    color: $color-brown;
+    font: inherit;
+    background: transparent;
+    border: 1px solid #cbb9a8;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+
+  button[aria-pressed="true"] {
+    color: white;
+    background: $color-brown;
+    border-color: $color-brown;
+  }
+
+  button:focus-visible {
+    outline: 3px solid $color-coral;
+    outline-offset: 3px;
+  }
+}
+
+// Botón del menú, visible solo en pantallas pequeñas.
+.boton-menu {
+  display: none;
+  padding: 0.65rem 1rem;
+  color: $color-brown;
+  font: inherit;
+  background: transparent;
+  border: 1px solid #cbb9a8;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+// Ajustes para pantallas pequeñas.
+@media (max-width: 600px) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+
+    nav {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    &.menu-abierto nav {
+      display: flex;
+    }
+  }
+
+  .boton-menu {
+    display: inline-flex;
+  }
+
+  .tarjetas-lista {
+    grid-template-columns: 1fr;
+  }
+}
